@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/style.css">
+        <script type="text/javascript" src="../js/script.js"></script>
+        <body>
+            <h1 class="underline">Calculator</h1>
+            <div class="center">
+                <form action="{{url_for('calculate')}}" method="POST">
+                    
+                    <input type="text" name="leftOperand" class="input-border">
+                    <br>
+                    <select name="operator" class="input-border">
+                        <option value="add">+</option>
+                        <option value="substract">-</option>
+                        <option value="multiply">*</option>
+                        <option value="divide">/</option>
+                    </select>
+                    <br>
+                    <input type="text" name="rightOperand" class="input-border">
+                    <br>
+                    <p id="equal-sign"> = </p>
+                    
+                    
+                
+            
+            {% if calculationResult %}
+                {% if calculationResult == "Cannot divide by zero" or 
+                calculationResult == "Missing operands"
+                or calculationResult == "Invalid operands" %}
+                    <p class="result-style error-message center-text">{{calculationResult}}</p>
+                {% else %}
+                    
+                    <p class="result-style center-text">{{calculationResult}}</p>
+                {% endif %}
+            {% endif %}
+                <br>
+                <button class="input-border" type="submit">Calculate</button>
+            </form>
+        </div>
+        </body>
+    </head>
+</html>
