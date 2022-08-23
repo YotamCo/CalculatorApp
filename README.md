@@ -1,10 +1,10 @@
 # Calculator Application
 
     Supported Operations:
-        - Addition
-        - Substraction
-        - Multiplication
-        - Division
+    - Addition
+    - Substraction
+    - Multiplication
+    - Division
 
     How to use:
         - Open terminal from the project's directory
